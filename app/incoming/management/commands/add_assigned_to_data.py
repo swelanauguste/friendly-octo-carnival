@@ -11,7 +11,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         fake = Faker()
-        for _ in range(4):
+        for _ in range(10):
             AssignedTo.objects.get_or_create(
                 name=fake.unique.company(), 
                 # description=fake.text()

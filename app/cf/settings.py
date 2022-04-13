@@ -15,7 +15,7 @@ SECRET_KEY = "django-insecure-wyqr1k%5#c22)r^5(4-zkh=(p_iol(2377*#e73zvo3oy7*_tl
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
+CSRF_TRUSTED_ORIGINS = ["https://kingship.loca.lt"]
 
 # Application definition
 
