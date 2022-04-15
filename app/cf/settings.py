@@ -32,6 +32,8 @@ INSTALLED_APPS = [
     "incoming",
     "outgoing",
     "users",
+    "employees",
+    "payroll",
     # 3rd_party_apps
     "crispy_forms",
     "allauth",
