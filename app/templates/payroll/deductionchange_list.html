@@ -8,7 +8,7 @@ Accountant General's Department
 
 
 {% block content %}
-<div class="container pt-5 mt-5">
+<div class="container pt-5 mt-5 vh-100">
     <div class="d-flex justify-content-center">
         <div class="col-lg-8">
             <form action="{% url 'search:results' %}"
@@ -64,7 +64,7 @@ Accountant General's Department
                 {% empty %}
                 <tr>
                     <td class="text-center fw-bold"
-                        colspan="5">No results found</td>
+                        colspan="7">No results found</td>
                 </tr>
                 {% endfor %}
             </tbody>
