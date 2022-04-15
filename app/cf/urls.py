@@ -6,6 +6,9 @@ from search.views import SearchView
 
 urlpatterns = [
     path("", SearchView.as_view(), name="search"),
+    path("incoming/", include("incoming.urls", namespace="incoming")),
+    path("payroll/", include("payroll.urls", namespace="payroll")),
+    path("search/", include("search.urls", namespace="search")),
     path("admin/", admin.site.urls),
     path("accounts/", include("allauth.urls")),
 ]

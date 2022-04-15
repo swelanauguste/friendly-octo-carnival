@@ -14,5 +14,5 @@ class Command(BaseCommand):
                 title=fake.unique.sentence(nb_words=10),
                 author = fake.company(),
                 description=fake.text(),
-                assigned_to = AssignedTo.objects.get(id=random.randint(1,4))
+                assigned_to = AssignedTo.objects.get(id=random.randint(1,10))
             )

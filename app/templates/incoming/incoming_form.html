@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load humanize %}
+
+{% load crispy_forms_tags %}
+
+{% block head_title %}
+New - Incoming
+{% endblock head_title %}
+
+
+{% block content %}
+
+<div class="h1 text-center">
+    New - Incoming
+</div>
+<hr>
+<div class="container">
+<br>
+    <div class="d-flex justify-content-center">
+        <div class="col-lg-6 col-sm-8 border pt-5 pb-3 px-5 shadow" style="border-radius:1rem;">
+            <form action=""
+                method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form|crispy}}
+                <div class="my-3 text-end">
+                    <button type="submit"
+                        class="btn btn-outline-dark px-5">
+                        Save
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

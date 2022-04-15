@@ -23,7 +23,7 @@ class Incoming(models.Model):
     slug = models.SlugField(max_length=255, unique=True, null=True)
     author = models.CharField(max_length=255)
     description = models.TextField()
-    document = models.FileField(upload_to="incoming/", null=True, blank=True)
+    document = models.FileField(upload_to="incoming_documents/", null=True, blank=True)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_by = models.ForeignKey(User, related_name="+", on_delete=models.CASCADE, default=1)

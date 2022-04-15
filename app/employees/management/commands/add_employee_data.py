@@ -2,8 +2,7 @@ from django.core.management.base import BaseCommand
 from faker import Faker
 import random
 
-from ...models import AssignedTo
-from users.models import User
+from ...models import Employee
 
 
 class Command(BaseCommand):
@@ -12,7 +11,9 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         fake = Faker()
         for _ in range(10):
-            AssignedTo.objects.get_or_create(
-                name=fake.unique.company(), 
-                # description=fake.text()
+            Employee.objects.get_or_create(
+                employee_uid=fake.unique.ssn(), 
+                first_name=fake.first_name(),
+                last_name=fake.last_name(),
+                other_names=fake.last_name(),
             )

@@ -1,1 +1,49 @@
-<div class="display-3 text-center mb-5 border-bottom bg-dark text-light py-3 fixed-top">Department of the Accountant General</div>
+<nav class="py-2 bg-light border-bottom">
+    <div class="container d-flex flex-wrap">
+        <ul class="nav me-auto">
+            <li class="nav-item"><a href="/"
+                    class="nav-link link-dark px-2"
+                    aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="#"
+                    class="nav-link link-dark px-2">Reception</a></li>
+            <li class="nav-item"><a href="{% url 'payroll:list' %}"
+                    class="nav-link link-dark px-2">Payroll</a></li>
+            <li class="nav-item"><a href="#"
+                    class="nav-link link-dark px-2">Employees</a></li>
+            <!-- <li class="nav-item"><a href="#" class="nav-link link-dark px-2">About</a></li> -->
+        </ul>
+        <ul class="nav">
+            {% if request.user.is_authenticated %}
+
+            <li class="nav-item"><a href="#"
+                    class="nav-link link-dark px-2">{{request.user|title}}</a>
+            </li>
+            <li class="nav-item"><a href="{% url 'account_logout' %}"
+                    class="nav-link link-dark px-2">Logout</a></li>
+            {% else %}
+
+            <li class="nav-item"><a href="{% url 'account_login' %}"
+                    class="nav-link link-dark px-2">Login</a></li>
+            <li class="nav-item"><a href="{% url 'account_signup' %}"
+                    class="nav-link link-dark px-2">Sign up</a></li>
+            {% endif %}
+
+        </ul>
+    </div>
+</nav>
+<header class="py-3 mb-4 border-bottom bg-dark">
+    <div class="container d-flex flex-wrap justify-content-center">
+        <a href="/"
+            class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
+            <span class="fs-4 text-light">Accountant General's
+                Department</span>
+        </a>
+        <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0">
+            <input type="search"
+                class="form-control"
+                placeholder="Search..."
+                aria-label="Search">
+        </form> -->
+    </div>
+</header>
+

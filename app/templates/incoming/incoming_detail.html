@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load humanize %}
+
+{% block head_title %}
+{{object.title}}
+{% endblock head_title %}
+
+{% block content %}
+
+<div class="container mt-5 vh-100">
+    <div class="d-flex justify-content-center">
+        <div class="col-lg-8 border pt-5 pb-3 px-5 shadow"
+            style="border-radius:1rem;">
+            <h4>{{object.title}}</h4>
+            <hr>
+            <p>{{object.description}}
+                {% if object.document %}
+                <a target="_blank"
+                    href="{{object.document.url}}">{{object.title}}</a>
+                {% else %}
+            <p>No attachments</p>
+            {% endif %}
+            </p>
+            <hr>
+            <p>{{object.author}}</p>
+            <br>
+            <p class="text-muted text-end small">
+                {{object.updated_at|naturaltime}}</p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
