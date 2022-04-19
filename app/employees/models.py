@@ -19,4 +19,4 @@ class Deduction(models.Model):
     d_amount = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
-        return f"{self.d_name} - {self.d_amount}"
+        return f"{self.employee.first_name} - ${self.d_amount}"

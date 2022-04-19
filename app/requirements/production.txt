@@ -1,4 +1,4 @@
-django
-django-allauth
-django-crispy-forms
-django-hitcount
+django==4.0.4
+django-allauth==0.50.0
+django-crispy-forms==1.14.0
+django-hitcount==1.3.5
