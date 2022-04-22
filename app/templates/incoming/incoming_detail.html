@@ -9,7 +9,7 @@
 
 {% block content %}
 
-<div class="container mt-5 vh-100">
+<div class="container mt-5 min-vh-100">
     <div class="d-flex justify-content-center">
         <div class="col-lg-8 border pt-5 pb-3 px-5 shadow"
             style="border-radius:1rem;">
@@ -17,6 +17,9 @@
             <hr>
             <p>{{object.description}}
                 {% if object.document %}
+                <hr>
+                <iframe src="{{object.document.url}}#toolbar=0&navpanes=0&scrollbar=0" height="600" width="648"></iframe>
+                <hr>
                 <a target="_blank"
                     href="{{object.document.url}}">{{object.title}}</a>
                 {% else %}

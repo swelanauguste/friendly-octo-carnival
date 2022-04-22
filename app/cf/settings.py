@@ -12,10 +12,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-wyqr1k%5#c22)r^5(4-zkh=(p_iol(2377*#e73zvo3oy7*_tl"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*", "localhost"]
 CSRF_TRUSTED_ORIGINS = ["https://kingship.loca.lt"]
+X_FRAME_OPTIONS = 'http://localhost'
 
 
 # Application definition
