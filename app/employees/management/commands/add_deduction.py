@@ -1,8 +1,8 @@
 from django.core.management.base import BaseCommand
 from faker import Faker
 import random
-
-from ...models import Employee
+from decimal import Decimal
+from ...models import Employee, Deduction
 
 
 class Command(BaseCommand):
@@ -10,6 +10,9 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         fake = Faker()
-        amt = fake.pricetag().replace('$', '').replace(',', '')
-        print(amt)
-        # for _ in range(10):
+        for _ in range(10):
+            Deduction.objects.get_or_create(
+                employee = Employee.objects.get(id=random.randint(1,10)),
+                d_name = fake.license_plate(),
+                d_amount=Decimal(fake.pricetag().replace('$', '').replace(',', '')),
+            )
